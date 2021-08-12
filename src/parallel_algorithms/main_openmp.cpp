@@ -12,8 +12,7 @@ int main(void){
     // Initilaize the vector with -1
     std::generate(v.begin(),v.end(),std::rand); 
     
-    #pragma omp parallel
-    #pragma omp for
+    #pragma omp parallel for
     for (size_t i = 0 ; i < v.size(); i++)
         v[i] = std::sqrt(i);
 
