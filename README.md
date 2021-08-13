@@ -1,6 +1,6 @@
 # Supplementary material: ADVANCED PARALLEL PROGRAMMING IN C++
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/1c51042683ed4bcdb06cea617118e7be)](https://www.codacy.com/gh/diehlpk/SIAM-Review-examples/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=diehlpk/SIAM-Review-examples&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/1c51042683ed4bcdb06cea617118e7be)](https://www.codacy.com/gh/diehlpk/SIAM-Review-examples/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=diehlpk/SIAM-Review-examples&amp;utm_campaign=Badge_Grade) ![CircleCI](https://circleci.com/gh/diehlpk/siam-review-examples.svg?style=shield)](https://circleci.com/gh/diehlpk/siam-review-exmaples)
 
 The build system [CMake](https://cmake.org/) is used to compile all the examples. 
 
