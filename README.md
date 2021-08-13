@@ -18,4 +18,4 @@ make
 * Thread Building Blocks ([TBB](https://github.com/oneapi-src/oneTBB)) for the parallel algorithms
 * GNU compiler collection (gcc) >= 9 to support the parallel algorithms
 
-Note that we provide a [Docker image]( with all the dependencies installed and Docker image with all examples compiled 
+Note that we provide a [Docker image](https://hub.docker.com/repository/registry-1.docker.io/diehlpk/siam-review-base/tags?page=1&ordering=last_updated) with all the dependencies installed and Docker image with all examples compiled 
