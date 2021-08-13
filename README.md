@@ -1,6 +1,8 @@
 # Supplementary material: ADVANCED PARALLEL PROGRAMMING IN C++
 
-The build system [CMake](https://cmake.org/) is used to compile all the exmaples. 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/1c51042683ed4bcdb06cea617118e7be)](https://www.codacy.com/gh/diehlpk/SIAM-Review-examples/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=diehlpk/SIAM-Review-examples&amp;utm_campaign=Badge_Grade)
+
+The build system [CMake](https://cmake.org/) is used to compile all the examples. 
 
 The following code snippet shows how to compile the examples with the parallel algorithms and OpenMP
 
@@ -13,7 +15,7 @@ make
 
 ## Dependencies
 
-* Thread Building Blocks ([TBB](https://github.com/oneapi-src/oneTBB)) for the parallel algorthms
+* Thread Building Blocks ([TBB](https://github.com/oneapi-src/oneTBB)) for the parallel algorithms
 * GNU compiler collection (gcc) >= 9 to support the parallel algorithms
 
-Note that we provide a docker image with all the depencies installed and all the examples compiled. 
+Note that we provide a docker image with all the dependencies installed and all the examples compiled. 
