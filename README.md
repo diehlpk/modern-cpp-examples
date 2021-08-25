@@ -13,6 +13,16 @@ cmake ..
 make
 ```
 
+The following code snippet show how to compile the optional HPX examples
+
+
+```bash
+mkdir build
+cd build
+cmake -DWITH_HPX=ON ..
+make
+```
+
 ## Dependencies
 
 * Thread Building Blocks ([TBB](https://github.com/oneapi-src/oneTBB)) for the parallel algorithms
