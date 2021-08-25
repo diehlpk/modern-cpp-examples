@@ -14,13 +14,18 @@
 #  You should have received a copy of the GNU General Public License 
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-project(ModernC++)
-cmake_minimum_required(VERSION 3.0)
-
-
-
+project(ModernC++ LANGUAGES CXX)
+cmake_minimum_required(VERSION 3.18)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
+set(WITH_HPX FALSE CACHE BOOL "Enables the HPX examples")
+
+if(${WITH_HPX})
+    find_package(HPX REQUIRED)
+endif()
+
 add_subdirectory("./src")
+
+
 

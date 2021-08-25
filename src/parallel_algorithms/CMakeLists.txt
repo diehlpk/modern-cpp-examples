@@ -28,3 +28,9 @@ target_compile_options(for_openmp PRIVATE -fopenmp)
 add_executable(for_parallel main_for_each.cpp)
 target_link_options(for_parallel PRIVATE -ltbb)
 target_compile_options(for_parallel PRIVATE -std=c++1z)
+
+if(${WITH_HPX})
+
+    add_hpx_executable(hpx_for_parallel SOURCES main_for_each_hpx.cpp) 
+
+endif()

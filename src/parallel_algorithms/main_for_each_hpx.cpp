@@ -16,20 +16,24 @@
    along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <iostream>
+#include <hpx/hpx_main.hpp>
+#include <hpx/include/parallel_for_loop.hpp>
+
+#include <cmath>
 #include <vector>
 #include <numeric>
+#include <random>
+#include <algorithm>
 
 int main(void) {
   size_t n = 10000;
   // Generate the vector with the length
-  std::vector<int> v = std::vector<int>(n);
+  std::vector<double> v = std::vector<double>(n);
   // Initilaize the vector with -1
-  std::fill(v.begin(), v.end(), -1);
-  // Compute the sum of all elements
-  int s = std::accumulate(v.begin(), v.end(), 0.0);
-  // Output the result
-  std::cout << "Result= " << s << std::endl;
+  std::generate(v.begin(), v.end(), std::rand);
+
+  hpx::for_loop(hpx::execution::par, 0, v.size(),
+                [&](boost::uint64_t i) { v[i] = std::sqrt(v[i]); });
 
   return EXIT_SUCCESS;
 }
