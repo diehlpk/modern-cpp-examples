@@ -31,6 +31,7 @@ target_compile_options(for_parallel PRIVATE -std=c++1z)
 
 if(${WITH_HPX})
 
-    add_hpx_executable(hpx_for_parallel SOURCES main_for_each_hpx.cpp) 
+    add_hpx_executable(hpx_for_parallel SOURCES main_for_each_hpx.cpp)
+    add_hpx_executable(hpx_accumulate SOURCES main_accumulate_hpx.cpp)
 
 endif()
