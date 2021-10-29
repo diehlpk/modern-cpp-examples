@@ -14,5 +14,14 @@
 #  You should have received a copy of the GNU General Public License 
 #  along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-add_subdirectory("./parallel_algorithms")
-add_subdirectory("./async")
+add_executable(async_cpp main_async_cpp.cpp)
+target_link_options(async_cpp PRIVATE -pthread)
+target_compile_options(async_cpp PRIVATE -pthread)
+
+
+if(${WITH_HPX})
+
+    #add_hpx_executable(hpx_for_parallel SOURCES main_for_each_hpx.cpp)
+    #add_hpx_executable(hpx_accumulate SOURCES main_accumulate_hpx.cpp)
+
+endif()
