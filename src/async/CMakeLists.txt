@@ -21,7 +21,6 @@ target_compile_options(async_cpp PRIVATE -pthread)
 
 if(${WITH_HPX})
 
-    #add_hpx_executable(hpx_for_parallel SOURCES main_for_each_hpx.cpp)
-    #add_hpx_executable(hpx_accumulate SOURCES main_accumulate_hpx.cpp)
+    add_hpx_executable(hpx_async SOURCES main_async_hpx.cpp)
 
 endif()
