@@ -22,5 +22,6 @@ target_compile_options(async_cpp PRIVATE -pthread)
 if(${WITH_HPX})
 
     add_hpx_executable(hpx_async SOURCES main_async_hpx.cpp)
+    add_hpx_executable(hpx_co_await SOURCES main_co_await.cpp)
 
 endif()
