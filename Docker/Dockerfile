@@ -19,7 +19,7 @@ MAINTAINER Patrick Diehl <patrickdiehl1@gmail.com>
 
 RUN dnf update -y
 RUN dnf groupinstall "Development Tools" -y
-RUN dnf install gcc-c++ cmake git asio-devel boost-devel hwloc-devel gperftools-devel tbb-devel -y
+RUN dnf install  gcc-c++ cmake git asio-devel boost-devel hwloc-devel gperftools-devel tbb-devel wget -y
 
-RUN git clone --depth 1 https://github.com/STEllAR-GROUP/hpx.git  && cd hpx && mkdir build && cd build && cmake  -DHPX_HAVE_CXX20_COROUTINES=ON -DHPX_HAVE_AWAIT=ON .. && make -j 2 && make install
+RUN git clone --depth 1 https://github.com/STEllAR-GROUP/hpx.git  && cd hpx && wget https://patch-diff.githubusercontent.com/raw/STEllAR-GROUP/hpx/pull/5667.patch && git apply 5667.patch  && mkdir build && cd build && cmake  -DHPX_HAVE_CXX20_COROUTINES=ON -DHPX_HAVE_AWAIT=ON .. && make -j 2 && make install
 

@@ -18,7 +18,7 @@ version: 2
 jobs:
     build:
         docker:
-          - image: diehlpk/modern-cpp-base
+          - image: diehlpk/modern-cpp-base:latest
         steps:
             - checkout
             - run:
