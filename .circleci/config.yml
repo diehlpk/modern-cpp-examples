@@ -18,7 +18,7 @@ version: 2
 jobs:
     build:
         docker:
-          - image: diehlpk/siam-review-base:latest
+          - image: diehlpk/modern-cpp-base
         steps:
             - checkout
             - run:
