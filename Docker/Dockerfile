@@ -21,5 +21,7 @@ RUN dnf update -y
 RUN dnf groupinstall "Development Tools" -y
 RUN dnf install  gcc-c++ cmake git asio-devel boost-devel hwloc-devel gperftools-devel tbb-devel wget -y
 
-RUN git clone --depth 1 -b fcoroutines-gcc https://github.com/msimberg/hpx.git  && cd hpx && wget https://patch-diff.githubusercontent.com/raw/STEllAR-GROUP/hpx/pull/5667.patch && git apply 5667.patch  && mkdir build && cd build && cmake -DHPX_CXX_STANDARD=20 -DHPX_HAVE_AWAIT=ON -DHPX_HAVE_CXX20_COROUTINES=ON .. && make -j 2 && make install
+RUN rm -rf hpx
+
+RUN git clone --depth 1 https://github.com/STEllAR-GROUP/hpx.git  && cd hpx && wget https://patch-diff.githubusercontent.com/raw/STEllAR-GROUP/hpx/pull/5667.patch && git apply 5667.patch  && mkdir build && cd build && cmake -DHPX_WITH_CXX20=ON -DHPX_CXX_STANDARD=20 -DHPX_WITH_CXX20_COROUTINES=ON -DHPX_USE_CMAKE_CXX_STANDARD=ON  .. && make -j 2 && make install
 
