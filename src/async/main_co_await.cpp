@@ -43,7 +43,7 @@ hpx::future<double> get_taylor_part(double x, size_t n, size_t partitions) {
     futures.push_back(hpx::async(taylor_part, x, i * n / 3, (i + 1) * n / 3));
 
   // Gather the results
-  auto futures2 = co_await hpx::when_all(futures).get();
+  auto futures2 = co_await hpx::when_all(futures);
 
   // Sum the results
   for (size_t i = 0; i < futures2.size(); i++) result += co_await futures2[i];
