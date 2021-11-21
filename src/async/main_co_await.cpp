@@ -15,10 +15,14 @@
 */
 
 #include <hpx/hpx_main.hpp>
-#include <hpx/include/lcos.hpp>
+#include <hpx/local/future.hpp>
+#include <hpx/local/init.hpp>
+#include <hpx/local/thread.hpp>
+#include <hpx/modules/testing.hpp>
+
 #include <cmath>
 #include <iostream>
-#include <coroutine>
+
 
 double taylor_part(double x, size_t start, size_t end) {
   double result = 0;
