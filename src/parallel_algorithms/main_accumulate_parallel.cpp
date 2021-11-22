@@ -15,33 +15,21 @@
    You should have received a copy of the GNU General Public License
    along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
-#include <hpx/hpx_main.hpp>
-#include <hpx/algorithm.hpp>
-#include <hpx/future.hpp>
-
 #include <iostream>
 #include <vector>
 #include <numeric>
+#include <execution>
 
 int main(void) {
-  constexpr size_t n = 10000;
-
-  // Generate the vector with length n
-  std::vector<int> v(n);
-
-  // Initialize the vector with -1
-  hpx::ranges::fill(hpx::execution::par, v, -1);
-  |\label {
-  lst:for:each:hpx:1
-  }
-  |
-
-      // Compute the sum of all elements
-      hpx::future<double> f =
-      hpx::ranges::reduce(hpx::execution::par(hpx::execution::task), v, 0.0);
-
+  size_t n = 10000;
+  // Generate the vector with the length
+  std::vector<int> v = std::vector<int>(n);
+  // Initilaize the vector with -1
+  std::fill(std::execution::par, v.begin(), v.end(), -1);
+  // Compute the sum of all elements
+  int s = std::reduce(std::execution::par, v.begin(), v.end(), 0.0);
   // Output the result
-  std::cout << "Result= " << f.get() << std::endl;
+  std::cout << "Result= " << s << std::endl;
 
   return EXIT_SUCCESS;
 }
