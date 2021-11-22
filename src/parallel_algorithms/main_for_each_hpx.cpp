@@ -28,7 +28,7 @@
 int main(void) {
   size_t n = 10000;
   // Generate the vector with the length
-  std::vector<double> v (n);
+  std::vector<double> v(n);
   // Initilaize the vector with -1
   std::generate(v.begin(), v.end(), std::rand);
 

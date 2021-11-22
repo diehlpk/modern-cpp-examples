@@ -25,17 +25,21 @@
 
 int main(void) {
   constexpr size_t n = 10000;
-  
+
   // Generate the vector with length n
   std::vector<int> v(n);
-  
+
   // Initialize the vector with -1
-  hpx::ranges::fill(hpx::execution::par, v, -1); |\label{lst:for:each:hpx:1}|
-  
-  // Compute the sum of all elements
-  hpx::future<double> f = hpx::ranges::reduce(
-      hpx::execution::par(hpx::execution::task), v, 0.0);
-  
+  hpx::ranges::fill(hpx::execution::par, v, -1);
+  |\label {
+  lst:for:each:hpx:1
+  }
+  |
+
+      // Compute the sum of all elements
+      hpx::future<double> f =
+      hpx::ranges::reduce(hpx::execution::par(hpx::execution::task), v, 0.0);
+
   // Output the result
   std::cout << "Result= " << f.get() << std::endl;
 

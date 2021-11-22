@@ -23,7 +23,7 @@
 int main(void) {
   size_t n = 10000;
   // Generate the vector with the length
-  std::vector<int> v(n); 
+  std::vector<int> v(n);
   // Initilaize the vector with -1
   std::fill(v.begin(), v.end(), -1);
   // Compute the sum of all elements
