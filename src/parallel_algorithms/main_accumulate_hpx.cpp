@@ -27,7 +27,7 @@
 int main(void) {
   size_t n = 10000;
   // Generate the vector with the length
-  std::vector<int> v = std::vector<int>(n);
+  std::vector<int> v(n);
   // Initilaize the vector with -1
   hpx::fill(hpx::execution::par, v.begin(), v.end(), -1);
   // Compute the sum of all elements
